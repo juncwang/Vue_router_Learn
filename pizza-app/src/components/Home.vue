@@ -1,5 +1,5 @@
 <template>
-    <div>
+    <div class="container">
         <h1>Home</h1>
         <button v-on:click="goToMenu" class="btn btn-success">Let's order!</button>
     </div>

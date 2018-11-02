@@ -9,6 +9,7 @@
 
 * 新建 vue webpack 项目
     1. 第一种创建工程的命令: `vue init webpack project_name` 
+        * 创建完整到项目 - 有 vue 配置文件
         * 安装时的安装提示:
             * 第一个提示: 项目名称
             * 第二个提示: 项目描述
@@ -23,6 +24,7 @@
             * 等待安装完成后执行命令 `cd vue-playlist` 跳入项目文件夹内
             * 执行命令 `npm run dev` 开启项目
     2. 第二种创建工程的命令: `vue init webpack-simple project_name`
+        * 快速创建简单项目 - 无 vue 配置文件
         * 安装时的安装提示:
             * 第一个提示: 项目名称
             * 第二个提示: 项目描述
@@ -188,3 +190,25 @@
         }
     }
     ```
+
+    * router 配置组建地址抽离
+        * 新建文件 `routes.js`
+        * 把 `main.js` 内配置的 `const routes` 内容及所需文件的倒入移动到 `routes.js` 内
+        * 在 `routes.js` 内把 `const routes` 使用 `export` 暴露出来
+            * `export const routes`
+        * 在 `main.js` 把 `routes.js` 引入
+            * `import { routes } from "./routes"`
+
+    * router 组建复用
+        * 在 `routes.js` 内把 `Home` 的配置修改为以下
+            ```js
+            // component 改为 components
+            { path: "/", name: "homeLink", components: {
+                default: Home,
+                定义其他组建到名称
+                'orderingGuide': OrderingGuide,
+                'delivery': Delivery,
+                'history': History
+            } }
+            ```
+        * 在 `App.vue` 文件内使用 `<router-view name="components内定义到名称"></router-view>` 进行使用
