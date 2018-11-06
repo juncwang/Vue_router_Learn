@@ -212,3 +212,31 @@
             } }
             ```
         * 在 `App.vue` 文件内使用 `<router-view name="components内定义到名称"></router-view>` 进行使用
+
+    * router 滑块的控制
+        * 在 `main.js` 内配置 router 时:
+        ```js
+        const router = new VueRouter({
+            routes,
+            mode: "history",
+            // 控制滚动条方法
+            scrollBehavior:function(to, from, savedPostion){
+                // to 去到哪个页面
+                // from 来自哪个页面的请求
+                // savedPostion 记录上一次的滚动条位置信息 x, y  
+
+                // 滑块到 y 轴 100 位置的地方
+                // return { x: 0, y: 100 }
+
+                // 滑块到第一个 btn 到位置
+                // return { selector: '.btn' }
+
+                // 滑块到上一个记录点的位置, 需要使用浏览器返回建使用
+                if(savedPostion){
+                    return savedPostion
+                }else{
+                    return { x:0, y:0 }
+                }
+            }
+        })
+        ```

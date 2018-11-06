@@ -29,7 +29,7 @@ export const routes = [
       // next("/login")
       // }
     },
-    // 添加二级 router 属性为 children
+    // 添加二级 router 属性为 children, 添加默认组建 redirect
     { path: "/about", name: "aboutLink", redirect: "/contact", component: About, children: [
       { path: "/contact", name: "contactLink", component: Contact },
       { path: "/history", name: "historyLink", component: History },
