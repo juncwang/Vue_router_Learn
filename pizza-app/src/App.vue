@@ -6,9 +6,9 @@
     <div id="container">
       <router-view></router-view>
     </div>
-    <br />
+    <!-- <br /> -->
     <!-- 组建到复用 -->
-    <div class="container">
+    <!-- <div class="container">
       <div class="row">
         <div class="col-sm-12 col-md-4">
           <router-view name="orderingGuide"></router-view>
@@ -20,7 +20,7 @@
           <router-view name="history"></router-view>
         </div>
       </div>
-    </div>
+    </div> -->
   </div>
 </template>
 
