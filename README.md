@@ -240,3 +240,11 @@
             }
         })
         ```
+        
+### 自定义路由路径
+* 定义方式
+   * `{path: '/blog/:id', component: SingleBlog}` id 为须传入路径到值(可以是其他变量名)
+* 链接传参
+   * `<router-link v-bind:to="'/blog/' + id"></router-link>` 将 id 传入路径
+* 页面获取 id 方式
+   * `this.$route.params.id` 通过 route.params 获取参数值
