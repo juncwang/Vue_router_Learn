@@ -104,6 +104,11 @@
         // 通过 push 进行跳转
         this.$router.push('/menu')
         this.$router.push({ name: 'menuLink'})
+        
+        // 通过 push 跳转并传递参数
+        this.$router.push({path:'/', query:{alert:'传入的参数信息'}})
+        // 在跳转的页面内使用传入的参数
+        this.$router.query.alert
         ```
 * 二级或多级 router 配置及使用
     * 首先在 `main.js` 文件内配置
